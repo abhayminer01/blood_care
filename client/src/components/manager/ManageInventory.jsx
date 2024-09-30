@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import Header from './common/Header';
-import { getInventory } from '../services/api';
+import React, { useEffect, useState } from 'react'
+import { getInventory } from '../../services/api';
+import { Link } from 'react-router-dom';
 
-export default function Inventory() {
+export default function ManageInventory() {
 
-  const [inventory, setInventory] = useState([]);
+    const [inventory, setInventory] = useState([]);
 
-  const fetchInventory = async () => {
-    const data = await getInventory();
-    setInventory(data);    
-  };
-
-  useEffect(() => {
-    fetchInventory();
-  },[]);
+    const fetchInventory = async () => {
+        const data = await getInventory();
+        setInventory(data);        
+    };
+    
+    useEffect(() => {
+        fetchInventory();
+    },[]);
 
   return (
     <div>
-        <Header />
         <div>
-          <div className='absolute left-[15%] top-[12%] h-[800px] w-[70vw] bg-red-300 rounded-[50px] border border-black text-center p-5'>
+          <div className='absolute left-[15%] top-[3%] h-[800px] w-[70vw] bg-red-300 rounded-[50px] border border-black text-center p-5'>
             <h1 className='text-red-600 font-poppins font-bold text-[50px]'>Blood Inventory</h1>
             <div className='bg-red-500 rounded-[30px] h-10 pl-5 pr-5 pt-2 text-white font-poppins font-medium'>
               <ul className='flex justify-between'>
@@ -43,6 +42,10 @@ export default function Inventory() {
             </div>
           </div>
         </div>
+        <div className='absolute top-[90%] left-[40%] text-center text-white font-poppins font-medium flex gap-10'>
+            <Link to='/manager-panel'><button className='bg-red-500 rounded-[20px] p-2 w-28 h-10'>Go Back</button></Link>
+            <Link to='/manager-panel/manage-inv/edit'><button className='bg-red-500 rounded-[20px] p-2 w-28 h-10'>Edit</button></Link>
+        </div>
     </div>
-  );
+  )
 };

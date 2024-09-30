@@ -124,6 +124,24 @@ app.post('/api/donor-reg', async (req, res) => {
     };
 });
 
+app.get('/api/get-inventory', async (req, res) => {
+    try {
+        const select = await db.select('*').from('blood_inventory');
+        res.json(select);
+    } catch(error){
+        console.log(error);
+    };
+});
+
+app.get('/api/get-requests', async (req, res) => {
+    try {
+        const select = await db.select('*').from('blood_request');
+        res.json(select);
+    } catch(error){
+        console.log(error);
+    };
+});
+
 
 app.listen(port, ()=>{
     console.log(`Connected to port ${port}`);

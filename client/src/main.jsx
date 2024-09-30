@@ -13,6 +13,9 @@ import Donation from './components/donation/Donation';
 import DonorRegistration from './components/donation/DonorRegistration';
 import AdminPage from './components/admin/AdminPage';
 import ManagerPanel from './components/manager/ManagerPanel';
+import ManageInventory from './components/manager/ManageInventory';
+import EditInventory from './components/manager/EditInventory';
+import ManageRequest from './components/manager/ManageRequest';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -29,6 +32,9 @@ createRoot(document.getElementById('root')).render(
         <Route path='donation' element = {<Donation />} />
         <Route path='admin-page' element = {<AdminPage />} />
         <Route path='manager-panel' element = {<ManagerPanel />} />
+        <Route path='manager-panel/manage-inv' element = {<ManageInventory />} />
+        <Route path='manager-panel/manage-inv/edit' element = {<EditInventory />} />
+        <Route path='manager-panel/manage-req' element = {<ManageRequest />} />
       </Routes>
     </Router>
   </StrictMode>

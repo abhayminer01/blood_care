@@ -114,3 +114,30 @@ export async function donorRegistration(userId, blood_group, weight) {
     console.log(error);
   };
 };
+
+
+export async function getInventory() {
+    try{
+        const request = await fetch('http://localhost:3000/api/get-inventory');
+
+        const response = await request.json();
+        
+        return response;
+
+    }catch(error){
+        console.log(error);
+    };
+};
+
+export async function getRequests() {
+    try{
+        const request = await fetch('http://localhost:3000/api/get-requests');
+
+        const response = await request.json();
+        
+        return response;
+
+    }catch(error){
+        console.log(error);
+    };
+};

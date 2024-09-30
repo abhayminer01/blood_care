@@ -41,38 +41,43 @@ export default function RequestBlood() {
   return (
     <div>
         <Header />
-        <form onSubmit={handleForm}>
-            <label>Blood Group : 
-                <select name="group" id="group" onChange={handleGroup}>
-                    <option value="none">select</option>
-                    <option value="a+">A+</option>
-                    <option value="b+">B+</option>
-                    <option value="o+">O+</option>
-                    <option value="a-">A-</option>
-                    <option value="b-">B-</option>
-                    <option value="o-">O-</option>
-                    <option value="ab+">AB+</option>
-                    <option value="ab-">AB-</option>
-                </select>
-            </label>
-            <label>Amount(ml) : 
-                <input type="number" name='amount'/>
-            </label>
-            <label htmlFor="">Urgency : 
-                <select name="urgency" id="urgency" onChange={handleUrgency}>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-            </label>
-            <label htmlFor="">Location : 
-                <input type="text" name='location' />
-            </label>
-            <label htmlFor="">Purpose : 
-                <input type="text" name='purpose' />
-            </label>
-            <input type="submit" />
-        </form>
+        <div>
+            <div className='absolute left-[30%] top-[15%] h-[600px] w-[30vw] bg-red-300 rounded-[50px] border border-black text-center p-5'>
+                <h1 className='font-poppins font-bold text-red-600 text-[40px]'>Request Blood</h1>
+                <form onSubmit={handleForm} className='flex flex-col gap-10 w-full h-full relative top-20 font-poppins font-medium text-center'>
+                    <label>Blood Group : 
+                        <select required name="group" id="group" onChange={handleGroup} className='rounded-[20px] relative left-5'>
+                            <option value="none">select</option>
+                            <option value="a+">A+</option>
+                            <option value="b+">B+</option>
+                            <option value="o+">O+</option>
+                            <option value="a-">A-</option>
+                            <option value="b-">B-</option>
+                            <option value="o-">O-</option>
+                            <option value="ab+">AB+</option>
+                            <option value="ab-">AB-</option>
+                        </select>
+                    </label>
+                    <label>Amount(ml) : 
+                        <input required type="number" name='amount' className='rounded-[20px] relative left-5'/>
+                    </label>
+                    <label htmlFor="">Urgency : 
+                        <select required name="urgency" id="urgency" onChange={handleUrgency} className='rounded-[20px] relative left-5'>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </label>
+                    <label htmlFor="">Location : 
+                        <input required type="text" name='location' className='rounded-[20px] relative left-5'/>
+                    </label>
+                    <label htmlFor="">Purpose : 
+                        <input required type="text" name='purpose' className='rounded-[20px] relative left-5'/>
+                    </label>
+                    <input type="submit" className='rounded-[20px] cursor-pointer bg-red-500 w-28 h-10 relative left-[40%]' />
+                </form>
+            </div>
+        </div>
     </div>
   )
 }

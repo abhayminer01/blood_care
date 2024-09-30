@@ -23,7 +23,7 @@ export default function Header() {
         <div>
           <ul className='absolute flex gap-28 top-8 left-[400px] font-poppins font-[500] text-red-600 text-[20px]'>
             <Link to='/'><li>Home</li></Link>
-            <li>{flag ? <Link to='/donation'>Donation</Link> : <Link to='/donor-reg'>Donor Registration</Link>}</li>
+            <li>{flag ? null : <Link to='/donor-reg'>Donor Registration</Link>}</li>
             <Link to='/inventory'><li>Inventory</li></Link>
             <Link to='/request-blood'><li>Blood Request</li></Link>
             <Link to='/notifications'><li>Notifications</li></Link>
