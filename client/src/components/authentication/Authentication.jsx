@@ -24,16 +24,19 @@ export default function Authentication() {
 
   return (
     <div>
-      <form className='flex flex-col gap-8' onSubmit={handleFormSubmit}>
-        <label htmlFor="email">Email
-          <input type="email" name='email' />
+      <div className='absolute left-[38%] top-[10%] h-[500px] w-[20vw] bg-red-300 rounded-[50px] border border-black text-center p-5'>
+      <h1 className='font-poppins font-bold text-red-600 text-[50px]'>Login</h1>
+      <form className='relative font-poppins font-medium text-red-600 top-10 flex flex-col gap-8' onSubmit={handleFormSubmit}>
+        <label htmlFor="email">Email  :
+          <input className='relative left-5 rounded-[20px] h-9' type="email" name='email' />
         </label>
-        <label htmlFor="password">Password : 
-          <input type="password" name='password'/>
+        <label htmlFor="password">Password  : 
+          <input className='relative left-5 rounded-[20px] h-9' type="password" name='password'/>
         </label>
-        <input type="submit" className='cursor-pointer'/>
+        <input type="submit" className='cursor-pointer bg-red-500 text-white w-32 h-10 relative top-20 left-24 rounded-[20px]'/>
       </form>
-      <p>Dont have an account? <Link to='/auth/reg'>Register</Link></p>
+      <p className='text-blue-600'>Dont have an account? <Link className='text-white cursor-pointer' to='/auth/reg'>Register</Link></p>
+    </div>
     </div>
   );
 };

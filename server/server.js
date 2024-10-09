@@ -11,11 +11,11 @@ app.use(express.json());
 const db = new knex({
     client: 'mysql',
     connection: {
-      host: '127.0.0.1',
+      host: 'mysql.apexhosting.gdn',
       port: 3306,
-      user: 'root',
-      password: '',
-      database: 'blood_care',
+      user: 'apexMC960857',
+      password: '$x861gneGs12b^t0ROnKpAx@',
+      database: 'apexMC960857',
     },
 });
 
@@ -142,6 +142,15 @@ app.get('/api/get-requests', async (req, res) => {
     };
 });
 
+
+app.get('/api/get-users', async (req, res) => {
+    try{
+        const select = await db.select('*').from('user_creds');
+        res.json(select);
+    }catch(error){
+        console.log(error);
+    };
+});
 
 app.listen(port, ()=>{
     console.log(`Connected to port ${port}`);

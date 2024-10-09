@@ -141,3 +141,14 @@ export async function getRequests() {
         console.log(error);
     };
 };
+
+
+export async function getUsers(){
+    try{
+        const data = await fetch('http://localhost:3000/api/get-users');
+        const responce = await data.json();
+        return responce;
+    }catch(error){
+        console.log(error);
+    };
+};

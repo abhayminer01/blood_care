@@ -16,6 +16,7 @@ import ManagerPanel from './components/manager/ManagerPanel';
 import ManageInventory from './components/manager/ManageInventory';
 import EditInventory from './components/manager/EditInventory';
 import ManageRequest from './components/manager/ManageRequest';
+import ManageUsers from './components/admin/ManageUsers';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -35,6 +36,7 @@ createRoot(document.getElementById('root')).render(
         <Route path='manager-panel/manage-inv' element = {<ManageInventory />} />
         <Route path='manager-panel/manage-inv/edit' element = {<EditInventory />} />
         <Route path='manager-panel/manage-req' element = {<ManageRequest />} />
+        <Route path='/admin-page/user' element = {<ManageUsers />} />
       </Routes>
     </Router>
   </StrictMode>
